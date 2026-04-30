@@ -68,6 +68,8 @@ DEFAULT_COMMENT_LIMIT: int = 80
 SEARCH_QUERIES: List[str] = [
     "What",
     "Hate",
+    "Manual",
+    "Frustration"
 ]
 
 # =====================================================

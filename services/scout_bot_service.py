@@ -4,6 +4,7 @@ from nltk.sentiment import SentimentIntensityAnalyzer
 
 from clients.reddit_client import get_reddit_client
 from settings import settings
+from utils.helpers import evaluate_engagements
 from utils.logger import logger
 
 
@@ -11,6 +12,9 @@ class ScoutBotService:
     def __init__(self):
         self.subreddits = settings.DEFAULT_SUBREDDITS
         self.search_queries = settings.SEARCH_QUERIES
+        self.min_score = settings.MIN_SCORE
+        self.min_comments = settings.MIN_COMMENTS
+        self.min_upvote_ratio = settings.MIN_UPVOTE_RATIO
         self.reddit = get_reddit_client()
         self.sia = SentimentIntensityAnalyzer()
         self.search_results = []
@@ -40,17 +44,18 @@ class ScoutBotService:
                         time_filter = "month")
 
                     for search_result in search_results:
-                        cumulated_search_results.append(
-                            {"subreddit": subreddit,
-                             "search_query": search_query,
-                             "post_title": search_result.title, })
+                        evaluate_engagements(search_result,
+                                             cumulated_search_results,
+                                             subreddit, search_query,
+                                             self.min_upvote_ratio,
+                                             self.min_score, self.min_comments)
 
                     if not cumulated_search_results:
                         logger.warning(
-                            f"No results for query '{search_query}' on r/{subreddit}")
+                            f"No results for query '{search_query}' on r/{subreddit} found: {len(cumulated_search_results)} posts")
                     else:
                         logger.info(
-                            f"Query '{search_query}' on r/{subreddit} : {len(cumulated_search_results)} posts")
+                            f"Query '{search_query}' on r/{subreddit} found {len(cumulated_search_results)} posts")
                     search_results_list.append(cumulated_search_results)
 
             self.search_results = search_results_list

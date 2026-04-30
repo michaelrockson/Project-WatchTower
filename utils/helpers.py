@@ -158,6 +158,21 @@ def get_posts_from_subreddit(
     return posts
 
 
+def evaluate_engagements(search_result, cumulated_search_results, subreddit,
+                         search_query, min_upvote_ratio, min_score, min_comments):
+    if (
+        search_result.upvote_ratio >= min_upvote_ratio
+        and search_result.score >= min_score
+        and search_result.num_comments >= min_comments
+        and not search_result.stickied
+    ):
+        cumulated_search_results.append(
+            {"subreddit": subreddit,
+             "search_query": search_query,
+             "post_title": search_result.title,
+             "post_score": search_result.score})
+
+
 def ensure_data_integrity(session: Session, reddit_data) -> list:
     """
     Ensures data integrity by checking if the submission_ids in the reddit_data exist in the database.
