@@ -75,9 +75,9 @@ SEARCH_QUERIES: List[str] = [
 # =====================================================
 # REDDIT DATA FILTERING REQUIREMENTS
 # =====================================================
-MIN_COMMENTS = 30
-MIN_SCORE = 30
-MIN_UPVOTE_RATIO = 0.30
+MIN_COMMENTS = 50
+MIN_SCORE = 50
+MIN_UPVOTE_RATIO = 0.50
 
 # =====================================================
 # AGENT SETTINGS AND OBJECTIVES

@@ -170,6 +170,7 @@ def evaluate_engagements(search_result, cumulated_search_results, subreddit,
             {"subreddit": subreddit,
              "search_query": search_query,
              "post_title": search_result.title,
+             "post_content": search_result.selftext,
              "post_score": search_result.score})
 
 
