@@ -1,38 +1,22 @@
 # Reddit Painpoint Agent
 
-This agent monitors niche subreddits to surface and validate real, recurring frustrations from real people before you
-write a single line of product code.
-
-It runs on a multi-stage pipeline: a **Scout Bot** identifies potential software-solvable pain points from Reddit searches, an **Ingress Service** fetches the full validated data and a **Sentiment Pipeline** filters noise. Finally, a **Core Pipeline** uses Gemini to produce structured problem briefs your team can actually act on.
-
+Automatically discover and validate real, recurring software problems from Reddit before you write a single line of product code.
+The agent monitors niche subreddits, filters noise with sentiment analysis and uses Gemini to produce structured problem briefs: validated pain points with enough context for your team to act on immediately. 
 Results are persisted to a database and optionally exported to Notion or delivered by email.
-Built with a clean service/repository architecture, agent-driven pre-validation and runtime secrets management via Infisical.
 
 *Flask · SQLAlchemy · Gemini · Reddit API · Infisical*
 
-## 1. Why Reddit-only?
+## How It Works
 
-Focusing on one platform keeps ingestion, privacy and evaluation requirements simple. Reddit's conversational
-structure (posts + nested comments) is well-suited to surfacing recurring, real-world problems. Other platforms can be
-added later by creating a new input client and matching ingress service.
+The agent runs a four-stage pipeline:
 
-## 2. Problem
+- Scout — Searches Reddit for potential pain points and uses an agent to validate software solvability before anything is stored.
+- Ingress — Fetches full posts and comments for every approved submission ID.
+- Sentiment — Normalises text, filters noise, and runs VADER scoring to validate signal strength.
+- Curation — Runs structured Gemini prompts to identify recurring problems and package them as problem briefs.
+- Egress — Persists briefs to the database and exports to configured sinks (Notion / Email).
 
-Manual discovery of recurring real-world problems across subreddits is slow and noisy. This service automates discovery,
-validation and packaging of those findings so teams can act faster.
-
-## 3. Solution
-
-- **Scout Bot**: Periodic discovery and agent-based validation of pain points from Reddit searches.
-- **Ingress**: targeted collection of posts and comments for validated IDs.
-- **Sentiment**: Sentiment analysis on collected data to validate signal strength.
-- **Core**: LLM-based curation (Gemini) to produce structured problem briefs.
-- **Secrets**: Managed dynamically from [Infisical](https://infisical.com) at runtime.
-- **Output**: Curated briefs persisted to the database and optionally exported (Email / Notion).
-
-## 4. Quick Start
-
-### Prerequisites
+## Prerequisites
 
 - Python 3.11+ (tested with 3.13)
 - A Reddit app (client ID & secret)
@@ -40,26 +24,26 @@ validation and packaging of those findings so teams can act faster.
 - An [Infisical](https://infisical.com) project with secrets configured
 - Optional: Notion integration + Email credentials
 
-### Install
+## Install
 
-#### Option 1. Automated Setup (Recommended)
+### Option 1. Automated Setup (Recommended)
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone https://github.com/michaelrockson/Reddit-Painpoint-Agent.git
    cd Reddit-Painpoint-Agent
    ```
-2. Run the setup script:
+Run the setup script:
    ```bash
    chmod +x ./setup.sh
    ./setup.sh
    ```
    *This creates a virtual environment, installs dependencies and initializes your `.env` file.*
 
-#### Option 2. Manual Setup
+### Option 2. Manual Setup
 
-1. Clone the repository and navigate to the directory.
-2. Create and activate a virtual environment:
+Clone the repository and navigate to the directory.
+Create and activate a virtual environment:
    ```bash
    python -m venv .venv
    # Windows
@@ -67,11 +51,11 @@ validation and packaging of those findings so teams can act faster.
    # macOS/Linux
    source .venv/bin/activate
    ```
-3. Install dependencies:
+Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
-4. Initialize the environment file:
+Initialize the environment file:
    ```bash
    # Windows
    copy .env.example .env
@@ -119,7 +103,7 @@ Run the full pipeline once manually:
 python main.py
 ```
 
-## 5. Project Structure
+## Project Structure
 
 ```
 Reddit-PainPoint-Agent/
@@ -166,7 +150,7 @@ Reddit-PainPoint-Agent/
                                 #   Notion block builders & email formatter
 ```
 
-## 6. Secrets Management
+## Secrets Management
 
 Secrets are loaded dynamically at startup using `InfisicalSecretsService`. When the app initializes,
 `settings/settings.py` authenticates with Infisical and injects all project secrets into the environment before any
@@ -187,15 +171,7 @@ The following secrets should be configured in your Infisical project:
 | `RECIPIENT_ADDRESS`    | Report recipient email                |
 | `DATABASE_URL`         | SQLAlchemy database connection URL    |
 
-## 7. How it Works
-
-1. **Scout** — Discovery of potential pain points via Reddit search + Agentic validation of software solvability.
-2. **Ingress** — Targeted collection of full posts + comments for approved submission IDs.
-3. **Sentiment** — Normalize text, filter noise, run VADER sentiment scoring on approval-ready data.
-4. **Curation** — Run structured Gemini prompts to identify and package real, recurring problems.
-5. **Egress** — Persist validated briefs to the DB and export to configured sinks (Notion / Email).
-
-## 8. Development Status
+## Features
 
 - Reddit ingestion and data collection
 - Sentiment analysis pipeline
@@ -203,15 +179,10 @@ The following secrets should be configured in your Infisical project:
 - Notion sync and email notifications
 - Repository pattern (data access layer)
 - Dynamic secrets loading via Infisical
-- Storage logic consolidated into repositories
-- Egress helpers (`chunk_text`, `create_notion_blocks`, `format_email`) extracted to `utils/helpers.py`
+- Egress helpers extracted to utils/helpers.py
 
 ## 9. Notes & Limitations
 
 - Backend infrastructure only — no UI
 - Focused exclusively on Reddit as a data source
 - LLM inference costs apply depending on Gemini usage tier
-
-## 10. Project Wiki
-
-See [`project wiki/Home.md`](project%20wiki/Home.md) for extended rationale, architecture notes and running notes.
