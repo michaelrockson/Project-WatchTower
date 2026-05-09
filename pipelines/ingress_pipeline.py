@@ -15,12 +15,18 @@ class IngressPipeline:
     def run(self):
         """
         Executes the ingress pipeline: data scraping and storage.
+        Returns:
+            bool: True if the pipeline succeeded and found data, False otherwise.
         """
         try:
             logger.info("Ingress pipeline started")
 
             logger.info("Scraping data from Reddit...")
             reddit_data = self.reddit_service.run_reddit_scraper()
+
+            if not reddit_data or not reddit_data.get("posts"):
+                logger.warning("No new data fetched from Reddit. Stopping pipeline.")
+                return False
 
             logger.info("Storing scraped data...")
             self.reddit_service.run_reddit_storage(reddit_data)
@@ -30,4 +36,4 @@ class IngressPipeline:
         except Exception as e:
             logger.error(f"Error executing Ingress pipeline: {e}",
                          exc_info = True)
-            return {"error": str(e)}
+            return False

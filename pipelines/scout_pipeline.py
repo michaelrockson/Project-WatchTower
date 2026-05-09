@@ -16,7 +16,9 @@ class ScoutBotPipeline:
     def run(self):
         """
         Executes the scouting pipeline:
-        1. Agent validates and stores IDs in the database (internally calls search and analysis).
+        Agent validates and stores IDs in the database.
+        Returns:
+            bool: True if the pipeline succeeded and found data, False otherwise.
         """
         try:
             logger.info("Scout Bot pipeline started")
@@ -24,11 +26,15 @@ class ScoutBotPipeline:
             logger.info("Executing scout agent validation...")
             self.service.agent_validate_posts()
 
+            if not self.service.has_unprocessed_posts():
+                logger.warning("No software-solvable problems were validated by the agent. Stopping pipeline.")
+                return False
+
             logger.info("Scout Bot pipeline complete")
             return True
 
         except Exception as e:
             logger.error(f"Error in Scout Bot pipeline: {e}",
                          exc_info = True)
-            return {"error": str(e)}
+            return False
 

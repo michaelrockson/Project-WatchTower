@@ -20,11 +20,18 @@ class EgressPipeline:
     def run(self, choice):
         """
         Executes the egress pipeline: query brief and deliver via chosen channels.
+        Returns:
+            bool: True if the pipeline succeeded, False otherwise.
         """
         try:
             logger.info("Egress pipeline started")
             logger.info("Querying latest processed brief...")
-            self.service.query_brief()
+            brief = self.service.query_brief()
+
+            if not brief:
+                logger.error("No brief available for egress. Stopping pipeline.")
+                return False
+
             send_by_channel(
                 service = self.service,
                 choice = choice,
@@ -38,4 +45,4 @@ class EgressPipeline:
         except Exception as e:
             logger.error(f"Error executing Egress pipeline: {e}",
                          exc_info = True)
-            return {"error": str(e)}
+            return False

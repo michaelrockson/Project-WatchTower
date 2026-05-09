@@ -15,12 +15,18 @@ class SentimentPipeline:
     def run(self):
         """
         Executes the sentiment analysis pipeline: query, analyze, summarize, and store.
+        Returns:
+            bool: True if the pipeline succeeded and found data, False otherwise.
         """
         try:
             logger.info("Sentiment pipeline started")
 
             logger.info("Querying posts with comments...")
-            self.service.query_posts_with_comments()
+            posts = self.service.query_posts_with_comments()
+
+            if not posts:
+                logger.warning("No posts available for sentiment analysis. Stopping pipeline.")
+                return False
 
             logger.info("Analyzing sentiment...")
             self.service.analyze_post_sentiment()
@@ -37,4 +43,4 @@ class SentimentPipeline:
         except Exception as e:
             logger.error(f"Error in Sentiment Analysis pipeline: {e}",
                          exc_info = True)
-            return {"error": str(e)}
+            return False

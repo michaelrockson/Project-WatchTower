@@ -255,3 +255,23 @@ class ScoutBotService:
             self.session.close()
 
         return {"stored": stored, "skipped": skipped}
+
+        
+    def has_unprocessed_posts(self) -> bool:
+        """
+        Checks if there are any validated posts in the database that have
+        not yet been processed by the ingress pipeline.
+
+        Returns:
+            bool: True if unprocessed posts exist, False otherwise.
+        """
+        try:
+            count = self.session.query(ValidatedPost).filter(
+                ValidatedPost.is_processed == False
+            ).count()
+            return count > 0
+        except Exception as e:
+            logger.error(f"Error checking for unprocessed validated posts: {e}")
+            return False
+        finally:
+            self.session.close()

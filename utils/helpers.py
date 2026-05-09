@@ -1,3 +1,4 @@
+import sys
 from typing import List, Dict, Tuple, Any
 
 import markdown2
@@ -353,3 +354,16 @@ def send_by_channel(service: Any, choice: str, notion_only: str,
     if choice in (email_only, all_channels):
         logger.info("Sending email report...")
         service.send_email()
+
+
+
+def run_pipeline(pipeline, *args, **kwargs):
+    pipeline_name = pipeline.__class__.__name__
+
+    logger.info(f"Running {pipeline_name}...")
+
+    if not pipeline.run(*args, **kwargs):
+        logger.error(f"{pipeline_name} failed or found no data. Exiting.")
+        sys.exit(1)
+
+    logger.info(f"{pipeline_name} execution successful.")

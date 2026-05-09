@@ -15,12 +15,18 @@ class CorePipeline:
     def run(self):
         """
         Executes the core curation pipeline: execute agent and store response.
+        Returns:
+            bool: True if the pipeline succeeded and found data, False otherwise.
         """
         try:
             logger.info("Core Curation pipeline started")
 
             logger.info("Executing Curator Agent...")
-            self.service.execute_curator_agent()
+            response = self.service.execute_curator_agent()
+
+            if not response or "error" in response:
+                logger.warning("Curator agent failed to generate a brief. Stopping pipeline.")
+                return False
 
             logger.info("Storing curator response...")
             self.service.store_curator_response()
@@ -31,4 +37,4 @@ class CorePipeline:
         except Exception as e:
             logger.error(f"Error executing Core Curation pipeline: {e}",
                          exc_info = True)
-            return {"error": str(e)}
+            return False

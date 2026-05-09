@@ -1,4 +1,5 @@
 import os
+import sys
 from typing import List
 
 from dotenv import load_dotenv
@@ -8,7 +9,6 @@ from utils.logger import logger
 
 load_dotenv()
 
-# Initialize and load secrets from Infisical
 try:
     infisical = InfisicalSecretsService()
     infisical.authenticate_infisical_client()
@@ -52,6 +52,37 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 # DATABASE CONFIGURATION
 # =====================================================
 DATABASE_URL = os.getenv("DATABASE_URL")
+
+# =====================================================
+# SECRET VALIDATION (FAIL FAST)
+# =====================================================
+CRITICAL_SECRETS = {
+    "REDDIT_CLIENT_ID": REDDIT_CLIENT_ID,
+    "REDDIT_CLIENT_SECRET": REDDIT_CLIENT_SECRET,
+    "REDDIT_USER_AGENT": REDDIT_USER_AGENT,
+    "GEMINI_API_KEY": GEMINI_API_KEY,
+    "DATABASE_URL": DATABASE_URL,
+    "NOTION_API_KEY": NOTION_API_KEY,
+    "NOTION_DB_ID": NOTION_DB_ID,
+    "EMAIL_ADDRESS": EMAIL_ADDRESS,
+    "EMAIL_APP_PASSWORD": EMAIL_APP_PASSWORD,
+    "RECIPIENT_ADDRESS": RECIPIENT_ADDRESS,
+}
+
+missing_critical = []
+
+for key, value in CRITICAL_SECRETS.items():
+    if not value:
+        missing_critical.append(key)
+
+if missing_critical:
+    logger.error(
+        f"CRITICAL ERROR: Missing essential secrets: {', '.join(missing_critical)}"
+    )
+    logger.error(
+        "System cannot continue. Please check Infisical or your .env file."
+    )
+    sys.exit(1)
 
 # =====================================================
 # REDDIT DATA INGRESS SETTINGS
@@ -120,7 +151,6 @@ Your new workflow:
 Output:
 - Return the problem statements and their sentiment statements.
 """
-
 
 AGENT_VALIDATE_POSTS_OBJECTIVE = """
 You are a market scout agent responsible for identifying software-solvable pain points from Reddit.
