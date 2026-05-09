@@ -86,28 +86,52 @@ if missing_critical:
 
 # =====================================================
 # REDDIT DATA INGRESS SETTINGS
+# Free-tier token budget: keep subreddit × query count
+# low so the scout agent payload stays under ~50k tokens.
 # =====================================================
 DEFAULT_SUBREDDITS: List[str] = [
-    "smallbusiness",
+    "smallbusiness",       
+    "Entrepreneur",        
+    "freelance",          
+    "productivity",       
+    "ADHD",              
+    "personalfinance",     
+    "povertyfinance",     
+    "careerguidance",     
+    "antiwork",          
+    "cscareerquestions",   
+    "burnout",           
+    "selfimprovement",     
+    "webdev",              
+    "SideProject",         
+    "startups",            
 ]
-DEFAULT_POST_LIMIT: int = 100
-DEFAULT_COMMENT_LIMIT: int = 100
+DEFAULT_POST_LIMIT: int = 50  
+DEFAULT_COMMENT_LIMIT: int = 50 
 
 # =====================================================
 # REDDIT SCOUT BOT QUERIES SETTINGS
 # =====================================================
+MAX_SCOUT_RESULTS: int = 30
+
 SEARCH_QUERIES: List[str] = [
-    "How to speed up",
     "This takes too long",
-    "Faster way to",
-    "Ways to save money on",
-    "Hidden costs of",
     "How to stop spending money on",
-    "I hate how expensive",
-    "What’s the hardest part about",
-    "is draining my time reddit",
-    "Struggling with"
+    "Overwhelmed by",
+    "I've tried everything",
+    "What's the hardest part about",
+    "Can't stop procrastinating",
+    "Imposter syndrome",
+    "Feeling left behind",
+    "Analysis paralysis",
+    "Completely burned out from",
+    "There has to be a better way",
+    "Nothing seems to work for",
+    "Living paycheck to paycheck",
+    "Lack of motivation to",
+    "Why isn't there an app that",
 ]
+
 
 # =====================================================
 # REDDIT DATA FILTERING REQUIREMENTS

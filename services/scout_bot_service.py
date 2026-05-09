@@ -163,8 +163,19 @@ class ScoutBotService:
                              "post_sentiment": post_sentiment})
                         sentiment_collection.append(result_batches)
 
+            total_found = len(sentiment_collection)
+            if total_found > settings.MAX_SCOUT_RESULTS:
+                logger.warning(
+                    f"Scout results capped: {total_found} negative posts found, "
+                    f"truncating to {settings.MAX_SCOUT_RESULTS} to stay within "
+                    f"free-tier token limits."
+                )
+                sentiment_collection = sentiment_collection[:settings.MAX_SCOUT_RESULTS]
+
             logger.info(
-                f"Analysis complete. {len(sentiment_collection)} negative posts found. {skipped_posts} posts skipped.")
+                f"Analysis complete. {len(sentiment_collection)} negative posts retained "
+                f"({skipped_posts} skipped, {total_found} total found)."
+            )
             self.search_result_sentiments = sentiment_collection
             return sentiment_collection
 
