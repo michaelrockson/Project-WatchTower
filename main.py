@@ -23,10 +23,14 @@ if __name__ == "__main__":
     pipelines = [scout, ingress, sentiment, core, egress]
 
     for pipeline in pipelines:
+        status = False
         if isinstance(pipeline, EgressPipeline):
-            run_pipeline(pipeline, settings.CHOICE_THREE)
+            status = run_pipeline(pipeline, settings.CHOICE_THREE)
         else:
-            run_pipeline(pipeline)
+            status = run_pipeline(pipeline)
+
+        if not status:
+            sys.exit(1)
 
     logger.info("Full pipeline execution successful.")
     sys.exit(0)

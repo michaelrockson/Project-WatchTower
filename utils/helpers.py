@@ -359,18 +359,23 @@ def send_by_channel(service: Any, choice: str, notion_only: str,
 
 def run_pipeline(pipeline, *args, **kwargs):
     """
-    Runs a pipeline step.
+    Runs a pipeline step and returns its success status.
 
-    If it fails or returns nothing, the program stops.
+    Args:
+        pipeline: The pipeline instance to run.
+        *args: Positional arguments for the pipeline's run method.
+        **kwargs: Keyword arguments for the pipeline's run method.
 
-    Any extra arguments are passed into pipeline.run().
+    Returns:
+        bool: True if the pipeline succeeded and found data, False otherwise.
     """
     pipeline_name = pipeline.__class__.__name__
 
     logger.info(f"Running {pipeline_name}...")
 
     if not pipeline.run(*args, **kwargs):
-        logger.error(f"{pipeline_name} failed or found no data. Exiting.")
-        sys.exit(1)
+        logger.error(f"{pipeline_name} failed or found no data.")
+        return False
 
     logger.info(f"{pipeline_name} execution successful.")
+    return True

@@ -25,7 +25,7 @@ scheduler.add_job(
 
 # Schedule pipeline runs every 2 weeks
 scheduler.add_job(
-    agent_job.run_all_pipelines,
+    agent_job.safe_run(agent_job.run_all_pipelines),
     trigger = "interval",
     weeks = 2,
     next_run_time = datetime.now() + timedelta(seconds = 10),

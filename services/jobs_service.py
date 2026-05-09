@@ -1,4 +1,7 @@
+import sys
+
 from database import get_session
+from database.init_db import init_db
 from pipelines.core_pipeline import CorePipeline
 from pipelines.egress_pipeline import EgressPipeline
 from pipelines.ingress_pipeline import IngressPipeline
@@ -6,6 +9,7 @@ from pipelines.scout_pipeline import ScoutBotPipeline
 from pipelines.sentiment_pipeline import SentimentPipeline
 from repositories.post_repository import PostRepository
 from settings import settings
+from utils.helpers import run_pipeline
 from utils.logger import logger
 
 
@@ -53,7 +57,10 @@ class JobService:
         """
         logger.info("Starting scout bot job")
         scout = ScoutBotPipeline()
-        self.safe_run(scout.run)()
+        status = run_pipeline(scout)
+        if not status:
+            logger.warning("Scout bot job interrupted.")
+            return
         logger.info("Scout bot job finished")
 
 
@@ -62,21 +69,28 @@ class JobService:
         Runs the pipelines synchronously in the correct order:
         Scout -> Ingress -> Sentiment -> Core -> Egress
         """
-        logger.info("Starting full pipeline sequence")
+        logger.info("Initializing database...")
+        init_db()
 
-        self.run_scout_bot()
-
+        scout = ScoutBotPipeline()
         ingress = IngressPipeline()
         sentiment = SentimentPipeline()
         core = CorePipeline()
         egress = EgressPipeline()
 
-        self.safe_run(ingress.run)()
-        self.safe_run(sentiment.run)()
-        self.safe_run(core.run)()
-        self.safe_run(egress.run)(self.egress_setting)
+        pipelines = [scout, ingress, sentiment, core, egress]
 
-        logger.info("Full pipeline sequence finished")
+        for pipeline in pipelines:
+            status = False
+            if isinstance(pipeline, EgressPipeline):
+                status = run_pipeline(pipeline, settings.CHOICE_THREE)
+            else:
+                status = run_pipeline(pipeline)
+
+            if not status:
+                return
+
+        logger.info("Full pipeline execution successful.")
 
 
     def cleanup_curated_data(self):
