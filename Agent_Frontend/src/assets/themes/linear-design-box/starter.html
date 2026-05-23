@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Design Box | Starter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="linear.css">
+    <style>
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-reveal].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .swatch {
+            width: 100%;
+            aspect-ratio: 1;
+            border-radius: var(--li-radius-md);
+            border: 1px solid var(--li-border-dim);
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="li-border-b"
+        style="position: sticky; top: 0; background: rgba(8, 9, 10, 0.8); backdrop-filter: blur(12px); z-index: 100;">
+    <div class="li-container">
+        <nav class="li-nav li-justify-between">
+            <div class="li-flex li-items-center">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="var(--li-brand)" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="li-fw-semibold li-ml-2">Linear Design Box</span>
+            </div>
+            <div class="li-nav li-hidden li-md-flex li-gap-lg">
+                <a href="#colors" class="li-nav-link">Colors</a>
+                <a href="#type" class="li-nav-link">Typography</a>
+                <a href="#components" class="li-nav-link active">Components</a>
+            </div>
+            <div class="li-flex li-items-center">
+                <button class="li-btn li-btn-primary li-btn-sm">Get started</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="li-section" style="position: relative; padding-bottom: var(--li-space-2xl);">
+    <div class="li-grid-bg"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+
+    <div class="li-container li-text-center li-animate-fade-in">
+        <div class="li-badge li-badge-brand li-mb-lg">
+            Linear Design Box — v1.0
+        </div>
+        <h1 class="li-text-hero li-gradient-text li-mb-lg">
+            Built for the next<br>generation of teams.
+        </h1>
+        <p class="li-text-lg li-text-secondary li-mx-auto li-mb-xl" style="max-width: 52ch;">
+            Tokens, base styles, layout utilities, and refined UI components — extracted from the iconic Linear
+            aesthetic. Single font. No dependencies.
+        </p>
+        <div class="li-flex li-justify-center li-gap-md li-mb-2xl">
+            <button class="li-btn li-btn-primary li-btn-lg">Browse components</button>
+            <button class="li-btn li-btn-secondary li-btn-lg">View tokens</button>
+        </div>
+
+        <!-- TERMINAL -->
+        <div class="li-mx-auto li-max-w-700 li-mt-xl" style="position: relative; z-index: 10;">
+            <div class="li-terminal">
+                <div class="li-terminal-bar">
+                    <div class="li-t-dot li-t-dot-red"></div>
+                    <div class="li-t-dot li-t-dot-yellow"></div>
+                    <div class="li-t-dot li-t-dot-green"></div>
+                    <div class="li-terminal-title">linear-design-box.sh</div>
+                </div>
+                <div class="li-terminal-body">
+                    <div class="li-t-line">
+                        <span class="li-t-prompt">➜</span>
+                        <span class="li-t-cmd">npm install @linear/design-box</span>
+                    </div>
+                    <div class="li-t-out">
+                        Fetching tokens... <span class="li-t-str">Done</span><br>
+                        Initializing spacing... <span class="li-t-str">Done</span><br>
+                        Optimizing typography... <span class="li-t-str">Done</span>
+                    </div>
+                    <div class="li-t-line">
+                        <span class="li-t-prompt">➜</span>
+                        <span class="li-t-cmd">linear build --premium</span>
+                    </div>
+                    <div class="li-t-out">
+                        Generating components... <span class="li-t-str">Done</span><br>
+                        System ready. <span class="li-t-str">Happy building.</span>
+                    </div>
+                    <div class="li-t-line">
+                        <span class="li-t-prompt">➜</span>
+                        <span class="li-t-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- TICKER -->
+<div class="li-ticker">
+    <div class="li-ticker-track">
+        <div class="li-ticker-item">Tokens<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Typography<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Colors<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Grid<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Buttons<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Cards<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Forms<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Alerts<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Badges<span class="li-ticker-dot"></span></div>
+        <!-- Duplicated for loop -->
+        <div class="li-ticker-item">Tokens<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Typography<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Colors<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Grid<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Buttons<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Cards<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Forms<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Alerts<span class="li-ticker-dot"></span></div>
+        <div class="li-ticker-item">Badges<span class="li-ticker-dot"></span></div>
+    </div>
+</div>
+
+<!-- COLORS -->
+<section id="colors" class="li-section li-bg-surface">
+    <div class="li-container" data-reveal>
+        <div class="li-badge li-mb-md">Design tokens</div>
+        <h2 class="li-h2 li-mb-lg">Color System</h2>
+        <p class="li-text-secondary li-mb-xl" style="max-width: 52ch;">
+            A systematic palette built around a deep neutral scale, vibrant brand purples, and high-contrast
+            success/error indicators.
+        </p>
+        <div class="li-grid li-grid-8 li-gap-md li-max-w-700">
+            <div class="swatch" style="background: var(--li-brand);" title="--li-brand"></div>
+            <div class="swatch" style="background: var(--li-bg-app);" title="--li-bg-app"></div>
+            <div class="swatch" style="background: var(--li-bg-surface);" title="--li-bg-surface"></div>
+            <div class="swatch" style="background: var(--li-bg-card);" title="--li-bg-card"></div>
+            <div class="swatch" style="background: var(--li-info);" title="--li-info"></div>
+            <div class="swatch" style="background: var(--li-success);" title="--li-success"></div>
+            <div class="swatch" style="background: var(--li-warning);" title="--li-warning"></div>
+            <div class="swatch" style="background: var(--li-error);" title="--li-error"></div>
+        </div>
+    </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section id="type" class="li-section">
+    <div class="li-container" data-reveal>
+        <div class="li-badge li-mb-md">Typography</div>
+        <div class="li-flex li-flex-col li-gap-lg">
+            <h1 class="li-text-hero">Display — Inter Bold</h1>
+            <h2 class="li-h1">Heading 1 — 3rem Semibold</h2>
+            <h3 class="li-h2">Heading 2 — 2rem Semibold</h3>
+            <h4 class="li-h3">Heading 3 — 1.5rem Semibold</h4>
+            <p class="li-text-lg">Body Large — 1.125rem. The quick brown fox jumps over the lazy dog. Optimized for
+                readability and clarity.</p>
+            <p class="li-text-base">Body Regular — 1rem. Consistent type scale with a single sans-serif family at every
+                weight.</p>
+            <p class="li-text-sm li-text-muted">Caption — 0.875rem. Secondary information, timestamps, fine print.</p>
+            <p class="li-label" style="color: var(--li-brand); text-transform: uppercase; letter-spacing: 0.1em;">Label
+                Overline — 0.75rem</p>
+        </div>
+    </div>
+</section>
+
+<!-- COMPONENTS -->
+<section id="components" class="li-section">
+    <div class="li-container">
+
+        <!-- Buttons -->
+        <div class="li-mb-xl" data-reveal>
+            <div class="li-badge li-mb-md">Components</div>
+            <h2 class="li-h2 li-mb-lg">Buttons</h2>
+            <div class="li-flex li-flex-wrap li-items-center li-gap-md">
+                <button class="li-btn li-btn-primary">Primary Action</button>
+                <button class="li-btn li-btn-secondary">Secondary</button>
+                <button class="li-btn li-btn-ghost">Ghost Link</button>
+                <button class="li-btn li-btn-primary li-btn-sm">Small</button>
+                <button class="li-btn li-btn-primary li-btn-lg">Large Action</button>
+                <button class="li-btn li-btn-primary" disabled>Disabled</button>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Badges & Tags -->
+        <div class="li-grid li-grid-2 li-gap-xl li-mb-xl" data-reveal>
+            <div>
+                <h2 class="li-h3 li-mb-lg">Badges</h2>
+                <div class="li-flex li-flex-wrap li-gap-md">
+                    <span class="li-badge li-badge-brand">New</span>
+                    <span class="li-badge">Status</span>
+                    <span class="li-badge">v1.0</span>
+                </div>
+            </div>
+            <div>
+                <h2 class="li-h3 li-mb-lg">Tags</h2>
+                <div class="li-flex li-flex-wrap li-gap-md">
+                    <span class="li-tag">Design</span>
+                    <span class="li-tag li-tag-active">System</span>
+                    <span class="li-tag">React</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Alerts -->
+        <div class="li-mb-xl" data-reveal>
+            <h2 class="li-h3 li-mb-lg">Alerts</h2>
+            <div class="li-flex li-flex-col li-gap-md">
+                <div class="li-alert li-alert-info"><strong>Info:</strong> Your account has been updated.</div>
+                <div class="li-alert li-alert-success"><strong>Success:</strong> Changes saved successfully.</div>
+                <div class="li-alert li-alert-warning"><strong>Warning:</strong> Trial expires in 3 days.</div>
+                <div class="li-alert li-alert-error"><strong>Error:</strong> Failed to process payment.</div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Cards -->
+        <div class="li-mb-xl" data-reveal>
+            <h2 class="li-h3 li-mb-lg">Cards</h2>
+            <div class="li-grid li-grid-3 li-gap-md">
+                <div class="li-card li-hover-lift">
+                    <div class="li-card-header"><h3 class="li-card-title">Default Card</h3></div>
+                    <p class="li-text-sm li-text-secondary li-mb-md">Standard surface for grouping content.</p>
+                    <button class="li-btn li-btn-secondary li-btn-sm">Action</button>
+                </div>
+                <div class="li-card li-glass-card li-hover-lift">
+                    <div class="li-card-header"><h3 class="li-card-title">Glass Card</h3></div>
+                    <p class="li-text-sm li-text-secondary li-mb-md">Subtle blur and refined borders.</p>
+                </div>
+                <div class="li-card li-price-card-featured li-hover-lift">
+                    <div class="li-card-header"><h3 class="li-card-title">Featured Card</h3></div>
+                    <p class="li-text-sm li-text-secondary li-mb-md">Highlighted with brand border.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Inputs -->
+        <div class="li-mb-xl" data-reveal>
+            <h2 class="li-h3 li-mb-lg">Form Inputs</h2>
+            <div class="li-grid li-grid-2 li-gap-md li-max-w-700">
+                <div class="li-input-group">
+                    <label class="li-label">FULL NAME</label>
+                    <input type="text" class="li-input" placeholder="Michael Rockson">
+                </div>
+                <div class="li-input-group">
+                    <label class="li-label">EMAIL ADDRESS</label>
+                    <input type="email" class="li-input" placeholder="you@example.com">
+                </div>
+                <div class="li-input-group li-w-full" style="grid-column: span 2;">
+                    <label class="li-label">BIO</label>
+                    <textarea class="li-input" placeholder="Tell us about yourself..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <!-- Avatars & Stats -->
+        <div class="li-grid li-grid-2 li-gap-xl" data-reveal>
+            <div>
+                <h2 class="li-h3 li-mb-lg">Avatars</h2>
+                <div class="li-flex li-items-center li-gap-lg">
+                    <div class="li-avatar li-avatar-sm">MR</div>
+                    <div class="li-avatar">MR</div>
+                    <div class="li-avatar li-avatar-lg li-avatar-brand">JS</div>
+                    <div class="li-avatar li-avatar-xl">PG</div>
+                </div>
+            </div>
+            <div>
+                <h2 class="li-h3 li-mb-lg">Metrics</h2>
+                <div class="li-grid li-grid-2 li-gap-lg">
+                    <div class="li-stat">
+                        <span class="li-stat-value">12k</span>
+                        <span class="li-stat-label">Active Users</span>
+                        <span class="li-stat-delta">+12%</span>
+                    </div>
+                    <div class="li-stat">
+                        <span class="li-stat-value">99.9%</span>
+                        <span class="li-stat-label">Uptime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="li-section li-bg-surface" style="position: relative; overflow: hidden;">
+    <div class="hero-glow-1" style="top: 50%; left: 50%;"></div>
+    <div class="li-container" data-reveal>
+        <div class="li-text-center li-mb-2xl">
+            <div class="li-badge li-mb-md">Pricing</div>
+            <h2 class="li-h2 li-mb-md">Simple, Transparent Plans</h2>
+            <p class="li-text-secondary li-mx-auto" style="max-width: 44ch;">Start with what you need. Upgrade as you
+                grow.</p>
+        </div>
+
+        <div class="li-grid li-grid-3 li-gap-lg">
+            <div class="li-price-card">
+                <div class="li-price-tier">Starter</div>
+                <div class="li-price-amount">$0</div>
+                <p class="li-price-desc">Everything to get going — free, forever.</p>
+                <ul class="li-price-list">
+                    <li class="li-price-item">Tokens + base styles</li>
+                    <li class="li-price-item">Layout system</li>
+                    <li class="li-price-item">Responsive utilities</li>
+                </ul>
+                <button class="li-btn li-btn-secondary li-w-full">Get started free</button>
+            </div>
+            <div class="li-price-card li-price-card-featured">
+                <div class="li-flex li-justify-between li-items-center li-mb-md">
+                    <div class="li-price-tier">Pro</div>
+                    <span class="li-badge li-badge-brand">Popular</span>
+                </div>
+                <div class="li-price-amount">$49<span>/mo</span></div>
+                <p class="li-price-desc">Full component library + updates.</p>
+                <ul class="li-price-list">
+                    <li class="li-price-item">Everything in Starter</li>
+                    <li class="li-price-item">Full component library</li>
+                    <li class="li-price-item">Figma source files</li>
+                    <li class="li-price-item">Lifetime updates</li>
+                </ul>
+                <button class="li-btn li-btn-primary li-w-full">Buy now</button>
+            </div>
+            <div class="li-price-card">
+                <div class="li-price-tier">Team</div>
+                <div class="li-price-amount">$199</div>
+                <p class="li-price-desc">Unlimited seats and priority support.</p>
+                <ul class="li-price-list">
+                    <li class="li-price-item">Everything in Pro</li>
+                    <li class="li-price-item">Unlimited seats</li>
+                    <li class="li-price-item">Priority support</li>
+                </ul>
+                <button class="li-btn li-btn-secondary li-w-full">Contact us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="li-section li-border-t">
+    <div class="li-container">
+        <div class="li-flex li-justify-between li-items-center li-flex-mobile-col">
+            <div class="li-flex li-items-center">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                </svg>
+                <span class="li-text-sm li-fw-medium li-ml-sm">Linear Design Box</span>
+            </div>
+            <p class="li-text-xs li-text-muted">Built by Michael Rockson</p>
+            <div class="li-flex li-gap-lg">
+                <span class="li-badge">v1.0.0</span>
+                <span class="li-badge li-badge-brand">MIT</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, {threshold: 0.08});
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

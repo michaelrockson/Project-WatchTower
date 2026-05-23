@@ -1,0 +1,119 @@
+/**
+ * Linear Design Box - Base Styles
+ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--li-bg-app);
+    color: var(--li-text-primary);
+    font-family: var(--li-font-sans);
+    font-size: var(--li-fs-base);
+    line-height: var(--li-lh-base);
+    font-weight: var(--li-fw-normal);
+    min-height: 100vh;
+}
+
+/* --- Typography Utilities --- */
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--li-text-primary);
+    font-weight: var(--li-fw-semibold);
+    line-height: var(--li-lh-tight);
+    letter-spacing: -0.02em;
+}
+
+.li-h1 {
+    font-size: var(--li-fs-4xl);
+}
+
+.li-h2 {
+    font-size: var(--li-fs-3xl);
+}
+
+.li-h3 {
+    font-size: var(--li-fs-2xl);
+}
+
+.li-h4 {
+    font-size: var(--li-fs-xl);
+}
+
+.li-text-hero {
+    font-size: var(--li-fs-hero);
+    font-weight: var(--li-fw-bold);
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.li-text-lg {
+    font-size: var(--li-fs-lg);
+}
+
+.li-text-sm {
+    font-size: var(--li-fs-sm);
+}
+
+.li-text-xs {
+    font-size: var(--li-fs-xs);
+}
+
+.li-text-secondary {
+    color: var(--li-text-secondary);
+}
+
+.li-text-muted {
+    color: var(--li-text-muted);
+}
+
+.li-text-brand {
+    color: var(--li-brand);
+}
+
+.li-font-mono {
+    font-family: var(--li-font-mono);
+}
+
+/* --- Color Utilities --- */
+
+.li-bg-surface {
+    background-color: var(--li-bg-surface);
+}
+
+.li-bg-card {
+    background-color: var(--li-bg-card);
+}
+
+.li-bg-app {
+    background-color: var(--li-bg-app);
+}
+
+/* --- Links --- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--li-brand-light);
+}
+
+/* --- Selection --- */
+
+::selection {
+    background-color: var(--li-brand);
+    color: white;
+}

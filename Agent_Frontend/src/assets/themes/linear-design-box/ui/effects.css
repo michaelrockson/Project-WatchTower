@@ -1,0 +1,124 @@
+/**
+ * Linear Design Box - Visual Effects
+ */
+
+.hero-glow-1 {
+    position: absolute;
+    top: -10%;
+    left: 20%;
+    width: 40%;
+    height: 40%;
+    background: radial-gradient(circle, rgba(94, 106, 210, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-glow-2 {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    width: 30%;
+    height: 30%;
+    background: radial-gradient(circle, rgba(2, 184, 204, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid var(--li-border-dim);
+    margin: var(--li-space-xl) 0;
+}
+
+/* --- Glassmorphism --- */
+
+.li-glass {
+    background: var(--li-glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--li-glass-border);
+}
+
+.li-glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.li-glass-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Gradients --- */
+
+.li-gradient-text {
+    background: linear-gradient(135deg, #ffffff 0%, #a5a5a5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.li-gradient-brand {
+    background: linear-gradient(135deg, var(--li-brand-light) 0%, var(--li-brand) 100%);
+}
+
+.li-gradient-glow {
+    position: relative;
+}
+
+.li-gradient-glow::after {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: linear-gradient(135deg, rgba(94, 106, 210, 0.4) 0%, rgba(0, 0, 0, 0) 50%);
+    border-radius: inherit;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- Borders --- */
+
+.li-border {
+    border: 1px solid var(--li-border-default);
+}
+
+.li-border-dim {
+    border: 1px solid var(--li-border-dim);
+}
+
+.li-border-b {
+    border-bottom: 1px solid var(--li-border-default);
+}
+
+/* --- Shadows --- */
+
+.li-shadow-sm {
+    box-shadow: var(--li-shadow-sm);
+}
+
+.li-shadow-md {
+    box-shadow: var(--li-shadow-md);
+}
+
+.li-shadow-lg {
+    box-shadow: var(--li-shadow-lg);
+}
+
+/* --- Special Effects --- */
+
+.li-mask-fade {
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+}
+
+.li-grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, black 100%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, black 100%);
+    pointer-events: none;
+    z-index: -1;
+}

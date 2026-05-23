@@ -1,0 +1,94 @@
+/**
+ * Linear Design Box - Tokens
+ * Inspired by Linear.app
+ */
+
+:root {
+    /* --- Colors --- */
+
+    /* Brand & Accents */
+    --li-brand: #5e6ad2;
+    --li-brand-light: #8fa6ff;
+    --li-brand-dark: #4c57b1;
+
+    /* Backgrounds */
+    --li-bg-app: #08090a;
+    --li-bg-surface: #111214;
+    --li-bg-surface-soft: #161718;
+    --li-bg-card: #1c1d1f;
+    --li-bg-overlay: rgba(0, 0, 0, 0.8);
+
+    /* Text */
+    --li-text-primary: #f7f8f8;
+    --li-text-secondary: #8a8f98;
+    --li-text-muted: #62666d;
+    --li-text-inverse: #08090a;
+
+    /* Borders & Dividers */
+    --li-border-dim: rgba(255, 255, 255, 0.05);
+    --li-border-default: rgba(255, 255, 255, 0.1);
+    --li-border-active: rgba(255, 255, 255, 0.2);
+
+    /* Functional */
+    --li-info: #02b8cc;
+    --li-success: #27a644;
+    --li-warning: #f2c94c;
+    --li-error: #eb5757;
+
+    /* --- Typography --- */
+    --li-font-sans: "Inter", "Inter Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --li-font-mono: "Berkeley Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    /* Font Sizes (Outfit Scale) */
+    --li-fs-xs: 0.75rem;
+    --li-fs-sm: 0.875rem;
+    --li-fs-base: 1rem;
+    --li-fs-lg: 1.125rem;
+    --li-fs-xl: 1.25rem;
+    --li-fs-2xl: 1.5rem;
+    --li-fs-3xl: 2rem;
+    --li-fs-4xl: 3rem;
+    --li-fs-hero: clamp(3rem, 8vw, 5rem);
+
+    /* Font Weights */
+    --li-fw-normal: 400;
+    --li-fw-medium: 510;
+    --li-fw-semibold: 590;
+    --li-fw-bold: 700;
+
+    /* Line Heights */
+    --li-lh-tight: 1.2;
+    --li-lh-base: 1.6;
+    --li-lh-relaxed: 1.8;
+
+    /* --- Spacing (Outfit Scale) --- */
+    --li-space-xs: 4px;
+    --li-space-sm: 8px;
+    --li-space-md: 16px;
+    --li-space-lg: 24px;
+    --li-space-xl: 48px;
+    --li-space-2xl: 80px;
+    --li-space-3xl: 120px;
+
+    /* Legacy aliases to avoid breaking layout.css immediately, but we should use the new ones */
+    --li-space-1: var(--li-space-xs);
+    --li-space-2: var(--li-space-sm);
+    --li-space-4: var(--li-space-md);
+    --li-space-6: var(--li-space-lg);
+    --li-space-8: 32px; /* Adding a step for 32px as it's common */
+    --li-space-12: var(--li-space-xl);
+    --li-space-16: 64px; /* Adding a step for 64px */
+
+    /* --- Borders & Radius --- */
+    --li-radius-sm: 4px;
+    --li-radius-md: 8px;
+    --li-radius-lg: 12px;
+    --li-radius-full: 9999px;
+
+    /* --- Effects --- */
+    --li-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+    --li-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    --li-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+    --li-glass-bg: rgba(255, 255, 255, 0.03);
+    --li-glass-border: rgba(255, 255, 255, 0.08);
+}

@@ -1,0 +1,290 @@
+/**
+ * Linear Design Box - Layout Primitives
+ */
+
+.li-container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--li-space-6);
+    padding-right: var(--li-space-6);
+}
+
+.li-section {
+    padding-top: var(--li-space-3xl);
+    padding-bottom: var(--li-space-3xl);
+}
+
+.li-section-sm {
+    padding-top: var(--li-space-lg);
+    padding-bottom: var(--li-space-lg);
+}
+
+/* Everything is dark theme by default */
+.li-section-light {
+    background-color: var(--li-bg-app);
+    color: var(--li-text-primary);
+}
+
+/* --- Ticker --- */
+
+.li-ticker {
+    background: var(--li-bg-surface-soft);
+    border-top: 1px solid var(--li-border-default);
+    border-bottom: 1px solid var(--li-border-default);
+    overflow: hidden;
+    padding: var(--li-space-4) 0;
+}
+
+.li-ticker-track {
+    display: flex;
+    white-space: nowrap;
+    animation: li-ticker-scroll 40s linear infinite;
+    width: max-content;
+}
+
+@keyframes li-ticker-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.li-ticker-item {
+    display: flex;
+    align-items: center;
+    font-size: var(--li-fs-xs);
+    font-weight: var(--li-fw-medium);
+    color: var(--li-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0 var(--li-space-8);
+}
+
+.li-ticker-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--li-brand);
+    margin-left: var(--li-space-8);
+}
+
+/* --- Grid System --- */
+
+.li-grid {
+    display: grid;
+    gap: var(--li-space-6);
+}
+
+.li-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.li-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.li-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.li-grid-8 {
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.li-grid-12 {
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.li-gap-sm {
+    gap: var(--li-space-2);
+}
+
+.li-gap-md {
+    gap: var(--li-space-4);
+}
+
+.li-gap-lg {
+    gap: var(--li-space-8);
+}
+
+.li-gap-xl {
+    gap: var(--li-space-16);
+}
+
+/* --- Flex Primitives --- */
+
+.li-flex {
+    display: flex;
+    gap: var(--li-space-4);
+}
+
+.li-flex-wrap {
+    flex-wrap: wrap;
+}
+
+.li-flex-col {
+    flex-direction: column;
+}
+
+.li-flex-1 {
+    flex: 1;
+}
+
+.li-items-center {
+    align-items: center;
+}
+
+.li-items-start {
+    align-items: flex-start;
+}
+
+.li-items-baseline {
+    align-items: baseline;
+}
+
+.li-justify-between {
+    justify-content: space-between;
+}
+
+.li-justify-center {
+    justify-content: center;
+}
+
+/* --- Spacing Utilities --- */
+
+.li-m-0 {
+    margin: 0;
+}
+
+.li-p-0 {
+    padding: 0;
+}
+
+.li-mt-xs {
+    margin-top: var(--li-space-xs);
+}
+
+.li-mt-sm {
+    margin-top: var(--li-space-sm);
+}
+
+.li-mt-md {
+    margin-top: var(--li-space-md);
+}
+
+.li-mt-lg {
+    margin-top: var(--li-space-lg);
+}
+
+.li-mt-xl {
+    margin-top: var(--li-space-xl);
+}
+
+.li-mt-2xl {
+    margin-top: var(--li-space-2xl);
+}
+
+.li-mt-3xl {
+    margin-top: var(--li-space-3xl);
+}
+
+.li-mb-xs {
+    margin-bottom: var(--li-space-xs);
+}
+
+.li-mb-sm {
+    margin-bottom: var(--li-space-sm);
+}
+
+.li-mb-md {
+    margin-bottom: var(--li-space-md);
+}
+
+.li-mb-lg {
+    margin-bottom: var(--li-space-lg);
+}
+
+.li-mb-xl {
+    margin-bottom: var(--li-space-xl);
+}
+
+.li-mb-2xl {
+    margin-bottom: var(--li-space-2xl);
+}
+
+.li-py-xs {
+    padding-top: var(--li-space-xs);
+    padding-bottom: var(--li-space-xs);
+}
+
+.li-py-sm {
+    padding-top: var(--li-space-sm);
+    padding-bottom: var(--li-space-sm);
+}
+
+.li-py-md {
+    padding-top: var(--li-space-md);
+    padding-bottom: var(--li-space-md);
+}
+
+.li-py-lg {
+    padding-top: var(--li-space-lg);
+    padding-bottom: var(--li-space-lg);
+}
+
+.li-py-xl {
+    padding-top: var(--li-space-xl);
+    padding-bottom: var(--li-space-xl);
+}
+
+.li-px-xs {
+    padding-left: var(--li-space-xs);
+    padding-right: var(--li-space-xs);
+}
+
+.li-px-sm {
+    padding-left: var(--li-space-sm);
+    padding-right: var(--li-space-sm);
+}
+
+.li-px-md {
+    padding-left: var(--li-space-md);
+    padding-right: var(--li-space-md);
+}
+
+.li-px-lg {
+    padding-left: var(--li-space-lg);
+    padding-right: var(--li-space-lg);
+}
+
+/* --- Helper Classes --- */
+.li-text-center {
+    text-align: center;
+}
+
+.li-w-full {
+    width: 100%;
+}
+
+.li-max-w-600 {
+    max-width: 600px;
+}
+
+.li-max-w-700 {
+    max-width: 700px;
+}
+
+.li-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Visibility --- */
+
+.li-hidden {
+    display: none;
+}

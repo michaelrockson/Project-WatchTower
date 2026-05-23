@@ -1,0 +1,57 @@
+/**
+ * Linear Design Box - Responsive Overrides
+ */
+
+@media (max-width: 1024px) {
+    .li-grid-4, .li-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .li-grid-8 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --li-fs-hero: 40px;
+        --li-fs-4xl: 32px;
+        --li-fs-3xl: 24px;
+        --li-space-16: 48px;
+    }
+
+    .li-grid-2, .li-grid-3, .li-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .li-grid-8 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .li-nav li-hidden {
+        display: none;
+    }
+
+    .li-flex-mobile-col {
+        flex-direction: column;
+    }
+
+    .li-container {
+        padding-left: var(--li-space-4);
+        padding-right: var(--li-space-4);
+    }
+
+    .li-text-hero {
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .li-text-hero {
+        font-size: 32px;
+    }
+
+    .li-flex:not(.li-items-center) {
+        flex-direction: column;
+    }
+}
