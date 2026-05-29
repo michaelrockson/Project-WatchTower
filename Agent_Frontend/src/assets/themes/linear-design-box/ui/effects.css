@@ -5,20 +5,20 @@
 .hero-glow-1 {
     position: absolute;
     top: -10%;
-    left: 20%;
-    width: 40%;
+    left: 8%;
+    width: 35%;
     height: 40%;
-    background: radial-gradient(circle, rgba(94, 106, 210, 0.15) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, transparent 70%);
     pointer-events: none;
 }
 
 .hero-glow-2 {
     position: absolute;
     bottom: 10%;
-    right: 10%;
+    right: 8%;
     width: 30%;
     height: 30%;
-    background: radial-gradient(circle, rgba(2, 184, 204, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 139, 0, 0.1) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -70,7 +70,7 @@
     content: '';
     position: absolute;
     inset: -1px;
-    background: linear-gradient(135deg, rgba(94, 106, 210, 0.4) 0%, rgba(0, 0, 0, 0) 50%);
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.4) 0%, rgba(0, 0, 0, 0) 50%);
     border-radius: inherit;
     z-index: -1;
     pointer-events: none;
