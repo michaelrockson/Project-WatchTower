@@ -92,12 +92,12 @@
     background: var(--li-bg-card);
     border: 1px solid var(--li-border-default);
     border-radius: var(--li-radius-lg);
-    padding: var(--li-space-6);
+    padding: var(--li-space-8);
     overflow: hidden;
 }
 
 .li-card-header {
-    margin-bottom: var(--li-space-4);
+    margin-bottom: var(--li-space-8);
 }
 
 .li-card-title {
@@ -326,6 +326,7 @@ textarea.li-input {
     position: relative;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     text-align: left;
+    
 }
 
 .li-terminal::before {

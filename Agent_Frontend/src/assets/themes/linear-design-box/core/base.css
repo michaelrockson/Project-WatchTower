@@ -109,6 +109,7 @@ a {
 
 a:hover {
     color: var(--li-brand-light);
+    cursor: pointer;
 }
 
 /* --- Selection --- */

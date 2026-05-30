@@ -26,4 +26,4 @@ class BriefRepository:
         Retrieve the latest processed briefs.
         """
         return self.session.query(ProcessedBriefs).order_by(
-            ProcessedBriefs.id.desc()).limit(10).all()
+            ProcessedBriefs.id.asc()).limit(10).all()

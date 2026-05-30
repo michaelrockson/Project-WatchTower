@@ -122,6 +122,11 @@
     gap: var(--li-space-4);
 }
 
+.li-flex2 {
+    display: flex;
+    gap: var(--li-space-2);
+}
+
 .li-flex-wrap {
     flex-wrap: wrap;
 }
@@ -276,6 +281,10 @@
 
 .li-max-w-700 {
     max-width: 700px;
+}
+
+.li-h-auto {
+    height: auto;
 }
 
 .li-mx-auto {
