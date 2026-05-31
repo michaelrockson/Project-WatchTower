@@ -8,6 +8,7 @@ high-quality user experiences with a focus on dark mode and refined visual effec
 Include the main stylesheet in your HTML:
 
 ```html
+
 <link rel="stylesheet" href="linear-design-box/linear.css">
 ```
 
@@ -36,6 +37,7 @@ Include the main stylesheet in your HTML:
 ### Hero Section
 
 ```html
+
 <section class="li-section">
     <div class="li-container li-text-center">
         <h1 class="li-text-hero li-gradient-text">Build for the future.</h1>
@@ -51,6 +53,7 @@ Include the main stylesheet in your HTML:
 ### Glass Card
 
 ```html
+
 <div class="li-card li-glass-card">
     <h3 class="li-card-title">Glassmorphism</h3>
     <p class="li-text-sm li-text-secondary">Subtle blur and border effects.</p>

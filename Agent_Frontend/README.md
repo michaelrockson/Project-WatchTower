@@ -1,8 +1,10 @@
-# Reddit Painpoint Agent — Frontend
+# Reddit Painpoint Agent
 
-The frontend provides the user interface for authentication, dashboards, pipeline management and reviewing generated opportunities produced by the agent.
+The frontend provides the user interface for authentication, dashboards, pipeline management and reviewing generated
+opportunities produced by the agent.
 
-This project is built with React, TypeScript and Vite and is intended to be used alongside the `Agent_Backend` component.
+This project is built with React, TypeScript and Vite and is intended to be used alongside the `Agent_Backend`
+component.
 
 ## Prerequisites
 
@@ -54,7 +56,8 @@ Modify only the frontend files for UI changes. Keep API contracts and environmen
 
 ## Configuration and Environment
 
-If your frontend needs environment variables, use Vite's `.env` files (e.g. `.env.local`). See `vite.config.ts` for details on how variables are injected.
+If your frontend needs environment variables, use Vite's `.env` files (e.g. `.env.local`). See `vite.config.ts` for
+details on how variables are injected.
 
 ## Coding & Style Guidelines
 
@@ -74,9 +77,11 @@ npm run type-check
 
 ## Contributing
 
-Follow the repository `contribution.md` at the project root for branch naming, PR requirements and code review guidelines. Keep frontend changes scoped to `Agent_Frontend/` unless you are coordinating a cross-component change.
+Follow the repository `contribution.md` at the project root for branch naming, PR requirements and code review
+guidelines. Keep frontend changes scoped to `Agent_Frontend/` unless you are coordinating a cross-component change.
 
 ## Resources
 
-- See the backend README for setup details that affect the frontend: [Agent_Backend/README.md](../Agent_Backend/README.md)
+- See the backend README for setup details that affect the
+  frontend: [Agent_Backend/README.md](../Agent_Backend/README.md)
 

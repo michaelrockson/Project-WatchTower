@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Linear Design Box | Starter</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;510;590;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="linear.css">
+    <link href="linear.css" rel="stylesheet">
     <style>
         [data-reveal] {
             opacity: 0;
@@ -36,16 +36,16 @@
     <div class="li-container">
         <nav class="li-nav li-justify-between">
             <div class="li-flex li-items-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="var(--li-brand)" stroke-width="2"
-                          stroke-linecap="round" stroke-linejoin="round"/>
+                <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="var(--li-brand)" stroke-linecap="round"
+                          stroke-linejoin="round" stroke-width="2"/>
                 </svg>
                 <span class="li-fw-semibold li-ml-2">Linear Design Box</span>
             </div>
             <div class="li-nav li-hidden li-md-flex li-gap-lg">
-                <a href="#colors" class="li-nav-link">Colors</a>
-                <a href="#type" class="li-nav-link">Typography</a>
-                <a href="#components" class="li-nav-link active">Components</a>
+                <a class="li-nav-link" href="#colors">Colors</a>
+                <a class="li-nav-link" href="#type">Typography</a>
+                <a class="li-nav-link active" href="#components">Components</a>
             </div>
             <div class="li-flex li-items-center">
                 <button class="li-btn li-btn-primary li-btn-sm">Get started</button>
@@ -140,7 +140,7 @@
 </div>
 
 <!-- COLORS -->
-<section id="colors" class="li-section li-bg-surface">
+<section class="li-section li-bg-surface" id="colors">
     <div class="li-container" data-reveal>
         <div class="li-badge li-mb-md">Design tokens</div>
         <h2 class="li-h2 li-mb-lg">Color System</h2>
@@ -162,7 +162,7 @@
 </section>
 
 <!-- TYPOGRAPHY -->
-<section id="type" class="li-section">
+<section class="li-section" id="type">
     <div class="li-container" data-reveal>
         <div class="li-badge li-mb-md">Typography</div>
         <div class="li-flex li-flex-col li-gap-lg">
@@ -182,7 +182,7 @@
 </section>
 
 <!-- COMPONENTS -->
-<section id="components" class="li-section">
+<section class="li-section" id="components">
     <div class="li-container">
 
         <!-- Buttons -->
@@ -264,11 +264,11 @@
             <div class="li-grid li-grid-2 li-gap-md li-max-w-700">
                 <div class="li-input-group">
                     <label class="li-label">FULL NAME</label>
-                    <input type="text" class="li-input" placeholder="Michael Rockson">
+                    <input class="li-input" placeholder="Michael Rockson" type="text">
                 </div>
                 <div class="li-input-group">
                     <label class="li-label">EMAIL ADDRESS</label>
-                    <input type="email" class="li-input" placeholder="you@example.com">
+                    <input class="li-input" placeholder="you@example.com" type="email">
                 </div>
                 <div class="li-input-group li-w-full" style="grid-column: span 2;">
                     <label class="li-label">BIO</label>
@@ -310,7 +310,7 @@
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="li-section li-bg-surface" style="position: relative; overflow: hidden;">
+<section class="li-section li-bg-surface" id="pricing" style="position: relative; overflow: hidden;">
     <div class="hero-glow-1" style="top: 50%; left: 50%;"></div>
     <div class="li-container" data-reveal>
         <div class="li-text-center li-mb-2xl">
@@ -367,9 +367,10 @@
     <div class="li-container">
         <div class="li-flex li-justify-between li-items-center li-flex-mobile-col">
             <div class="li-flex li-items-center">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"/>
+                <svg fill="none" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 12L12 22L22 12L12 2Z" stroke="currentColor" stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"/>
                 </svg>
                 <span class="li-text-sm li-fw-medium li-ml-sm">Linear Design Box</span>
             </div>
