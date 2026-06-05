@@ -8,7 +8,7 @@ export default function DashboardAnalyticsCard({
   return (
     <div className="li-card li-hover-lift">
       <p className="li-text-sm li-text-secondary li-mb-sm">{Tag}</p>
-      <h1 className="li-mb-md">{Data}</h1>
+      <h1 className="li-mb-md li-h1">{Data}</h1>
     </div>
   );
 }
