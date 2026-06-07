@@ -1,4 +1,5 @@
 import type { LineChartTooltipProps } from "../models/DashboardModels.ts";
+import React from "react";
 
 export default function AgentActivityTooltip({
   active,
