@@ -1,33 +1,13 @@
 import React, { useState } from "react";
-import { MdInbox, MdArrowForward } from "react-icons/md";
-import type { Record } from "../models/DashboardModels.ts";
-import DashboardTimeFilter, {
-  type TimePeriod,
-} from "./DashboardTimeFilter.tsx";
-
-interface Props {
-  record: Record[];
-}
-
-function EmptyState() {
-  return (
-    <div className="li-empty-state">
-      <MdInbox className="li-empty-state-icon" />
-      <p className="li-empty-state-title">No findings yet</p>
-      <p className="li-empty-state-sub">
-        Agent records will appear here once the pipelines start running.
-      </p>
-    </div>
-  );
-}
-
-function truncate(text: string, max = 72): string {
-  return text.length > max ? text.slice(0, max) + "…" : text;
-}
+import { MdArrowForward } from "react-icons/md";
+import type { DashboardHistoryCardProps, TimePeriod } from "../models/DashboardModels.ts";
+import DashboardTimeFilter from "./DashboardTimeFilter.tsx";
+import EmptyHistoryState from "./EmptyHistoryState.tsx";
+import { truncate } from "../utils/truncate.ts";
 
 export default function DashboardHistoryCard({
   record,
-}: Props): React.JSX.Element {
+}: DashboardHistoryCardProps): React.JSX.Element {
   const [timePeriod, setTimePeriod] = useState<TimePeriod>("weekly");
 
   return (
@@ -54,7 +34,7 @@ export default function DashboardHistoryCard({
         </div>
 
         {record.length === 0 ? (
-          <EmptyState />
+          <EmptyHistoryState />
         ) : (
           <div className="li-table-container">
             <table className="li-table">

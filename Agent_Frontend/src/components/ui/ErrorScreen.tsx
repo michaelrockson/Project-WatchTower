@@ -1,9 +1,5 @@
 import React from "react";
-
-type ErrorPayload = {
-  statusCode: number;
-  message: string;
-};
+import type { ErrorPayload } from "./models/UiModels.ts";
 
 export default function ErrorScreen({
   statusCode,

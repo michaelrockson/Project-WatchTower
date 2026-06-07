@@ -8,38 +8,9 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
-import type { PipelinePayload } from "../models/DashboardModels.ts";
-import DashboardTimeFilter, {
-  type TimePeriod,
-} from "./DashboardTimeFilter.tsx";
-
-interface Props {
-  pipelineData: PipelinePayload[];
-}
-
-interface TooltipProps {
-  active?: boolean;
-  payload?: { value: number; payload: PipelinePayload }[];
-}
-
-function PipelineTooltip({ active, payload }: TooltipProps) {
-  if (!active || !payload?.length) return null;
-  return (
-    <div className="li-chart-tooltip">
-      <p className="li-chart-tooltip-label">{payload[0].payload.pipeline}</p>
-      <div className="li-chart-tooltip-value">
-        <span>
-          <span
-            className="li-chart-tooltip-dot"
-            style={{ background: "#ff4500" }}
-          />
-          Runs
-        </span>
-        <span>{payload[0].value}</span>
-      </div>
-    </div>
-  );
-}
+import type { DashboardHexChartProps, TimePeriod } from "../models/DashboardModels.ts";
+import DashboardTimeFilter from "./DashboardTimeFilter.tsx";
+import PipelineTooltip from "./PipelineTooltip.tsx";
 
 const ANGLE_STYLE = {
   fontSize: 11,
@@ -49,7 +20,7 @@ const ANGLE_STYLE = {
 
 export default function DashboardHexChart({
   pipelineData,
-}: Props): React.JSX.Element {
+}: DashboardHexChartProps): React.JSX.Element {
   const [timePeriod, setTimePeriod] = useState<TimePeriod>("6months");
 
   return (

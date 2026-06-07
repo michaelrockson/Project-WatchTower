@@ -8,39 +8,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import type { AgentPayload } from "../models/DashboardModels.ts";
-import DashboardTimeFilter, {
-  type TimePeriod,
-} from "./DashboardTimeFilter.tsx";
-
-interface Props {
-  agentData: AgentPayload[];
-}
-
-interface TooltipProps {
-  active?: boolean;
-  payload?: { value: number; color: string }[];
-  label?: string;
-}
-
-function AgentActivityTooltip({ active, payload, label }: TooltipProps) {
-  if (!active || !payload?.length) return null;
-  return (
-    <div className="li-chart-tooltip">
-      <p className="li-chart-tooltip-label">{label}</p>
-      <div className="li-chart-tooltip-value">
-        <span>
-          <span
-            className="li-chart-tooltip-dot"
-            style={{ background: payload[0].color }}
-          />
-          Agent Runs
-        </span>
-        <span>{payload[0].value.toLocaleString()}</span>
-      </div>
-    </div>
-  );
-}
+import type { DashboardLineChartProps, TimePeriod } from "../models/DashboardModels.ts";
+import DashboardTimeFilter from "./DashboardTimeFilter.tsx";
+import AgentActivityTooltip from "./AgentActivityTooltip.tsx";
 
 const AXIS_STYLE = {
   fontSize: 12,
@@ -50,7 +20,7 @@ const AXIS_STYLE = {
 
 export default function DashboardLineChart({
   agentData,
-}: Props): React.JSX.Element {
+}: DashboardLineChartProps): React.JSX.Element {
   const [timePeriod, setTimePeriod] = useState<TimePeriod>("6months");
 
   return (

@@ -1,6 +1,9 @@
 import React from "react";
 import { MdTrendingUp, MdTrendingDown, MdTrendingFlat } from "react-icons/md";
-import type { AnalyticsCardsPayload, AnalyticsCardVariant } from "../models/DashboardModels.ts";
+import type {
+  AnalyticsCardsPayload,
+  AnalyticsCardVariant,
+} from "../models/DashboardModels.ts";
 
 const variantIconBoxClass: Record<NonNullable<AnalyticsCardVariant>, string> = {
   info: "li-card-icon-box-info",
@@ -9,7 +12,6 @@ const variantIconBoxClass: Record<NonNullable<AnalyticsCardVariant>, string> = {
   error: "li-card-icon-box-error",
   brand: "li-card-icon-box-brand",
 };
-
 
 export default function DashboardAnalyticsCard({
   tag,

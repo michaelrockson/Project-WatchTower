@@ -1,14 +1,8 @@
 import { useState } from "react";
 import { MdBarChart, MdDashboard, MdSettings } from "react-icons/md";
-import type { IconType } from "react-icons";
 import { FaReddit } from "react-icons/fa";
 import { IoMdFunnel } from "react-icons/io";
-
-export type SideBarNavItems = {
-  id: number;
-  icon?: IconType;
-  navLabel: string;
-};
+import type { SideBarNavItems } from "../types/NavigationTypes.ts";
 
 const navItems: SideBarNavItems[] = [
   {

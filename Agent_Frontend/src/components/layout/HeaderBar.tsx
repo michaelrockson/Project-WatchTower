@@ -1,37 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { MdNotificationsNone, MdSearch } from "react-icons/md";
-
-function useLiveClock() {
-  const [now, setNow] = useState(new Date());
-
-  useEffect(() => {
-    const id = setInterval(() => setNow(new Date()), 60_000);
-    return () => clearInterval(id);
-  }, []);
-
-  return now;
-}
-
-function formatTimestamp(date: Date): string {
-  return date.toLocaleString("en-US", {
-    weekday: "short",
-    month: "short",
-    day: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  });
-}
-
-interface Props {
-  pageTitle?: string;
-  notificationCount?: number;
-}
+import { useLiveClock } from "./hooks/useLiveClock.ts";
+import { formatTimestamp } from "./utils/formatTimestamp.ts";
+import type { HeaderBarProps } from "./models/LayoutModels.ts";
 
 export default function HeaderBar({
   pageTitle = "Dashboard",
   notificationCount = 0,
-}: Props): React.JSX.Element {
+}: HeaderBarProps): React.JSX.Element {
   const now = useLiveClock();
 
   return (
