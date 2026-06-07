@@ -1,4 +1,4 @@
-# Project Watchtower
+# Reddit-Mine
 
 A​‍​‌‍​‍‌ complete software application that helps users find, confirm and monitor problems that can be solved by software and which regularly arise in different areas of life, through Reddit.
 
@@ -32,8 +32,8 @@ Optional:
 Clone the repository:
 
 ```bash
-git clone https://github.com/michaelrockson/project-watchtower.git
-cd project-watchtower
+git clone https://github.com/michaelrockson/reddit-mine.git
+cd reddit-mine
 ```
 
 The project consists of two primary components:

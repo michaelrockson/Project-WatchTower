@@ -7,8 +7,8 @@ export default function SideBar() {
     <aside className="li-section-sm li-h-full li-sidebar">
       <div className="li-flex-xl li-flex-col li-border-b">
         <div className="li-sidebar-header">
-          <div className="li-sidebar-logo">WT</div>
-          <p className="li-sidebar-title">WatchTower</p>
+          <div className="li-sidebar-logo">RM</div>
+          <p className="li-sidebar-title">Reddit-Mine</p>
         </div>
       </div>
 

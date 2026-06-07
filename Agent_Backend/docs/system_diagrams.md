@@ -1,6 +1,6 @@
-# Project Watchtower - System Diagrams
+# Reddit-Mine - System Diagrams
 
-This document outlines the architecture, data flow, and configuration management of Project Watchtower using
+This document outlines the architecture, data flow, and configuration management of Reddit-Mine using
 Mermaid diagrams.
 
 ## 1. High-Level System Architecture

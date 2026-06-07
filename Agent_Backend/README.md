@@ -1,4 +1,4 @@
-# Project Watchtower – Backend
+# Reddit-Mine – Backend
 
 The backend is responsible for gathering Reddit discussions, analyzing the sentiments of the posts, validating the opportunities with Gemini and finally, creating structured problem briefs.
 
@@ -28,8 +28,8 @@ The agent runs a four-stage pipeline:
 Clone the repository:
 
    ```bash
-   git clone https://github.com/michaelrockson/project-watchtower.git
-   cd project-watchtower
+   git clone https://github.com/michaelrockson/Reddit-Mine.git
+   cd Reddit-Mine
    ```
 
 Run the setup script:
@@ -112,7 +112,7 @@ python main.py
 ## Project Structure
 
 ```
-project-watchtower/
+reddit-mine/
 ├── agent.py                    # Background scheduler (APScheduler)
 ├── main.py                     # Manual entry point
 │

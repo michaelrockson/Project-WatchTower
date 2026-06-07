@@ -1,6 +1,6 @@
 # Contribution Guide
 
-Thank you for contributing to Project Watchtower. This guide explains how to get started, how to structure contributions, and what standards to follow for both backend and frontend work.
+Thank you for contributing to Reddit-Mine. This guide explains how to get started, how to structure contributions, and what standards to follow for both backend and frontend work.
 
 ## Getting Started
 
