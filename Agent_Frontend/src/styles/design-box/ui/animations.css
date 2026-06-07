@@ -45,10 +45,11 @@
 }
 
 .li-hover-lift {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
 }
 
 .li-hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--li-shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: var(--li-shadow-lg), var(--li-shadow-inner);
+    border-color: rgba(255, 255, 255, 0.15);
 }

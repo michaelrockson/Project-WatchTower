@@ -6,15 +6,15 @@
     /* --- Colors --- */
 
     /* Brand & Accents */
-    --li-brand: #ff4500;
-    --li-brand-light: #ff6a33;
-    --li-brand-dark: #cc3700;
+    --li-brand: #ff4f19;
+    --li-brand-light: #ff7b4d;
+    --li-brand-dark: #d63800;
 
     /* Backgrounds */
     --li-bg-app: #08090a;
-    --li-bg-surface: #111214;
-    --li-bg-surface-soft: #161718;
-    --li-bg-card: #1c1d1f;
+    --li-bg-surface: rgba(17, 18, 20, 0.7);
+    --li-bg-surface-soft: rgba(22, 23, 24, 0.8);
+    --li-bg-card: rgba(28, 29, 31, 0.55);
     --li-bg-overlay: rgba(0, 0, 0, 0.8);
 
     /* Text */
@@ -24,9 +24,9 @@
     --li-text-inverse: #08090a;
 
     /* Borders & Dividers */
-    --li-border-dim: rgba(255, 255, 255, 0.05);
-    --li-border-default: rgba(255, 255, 255, 0.1);
-    --li-border-active: rgba(255, 255, 255, 0.2);
+    --li-border-dim: rgba(255, 255, 255, 0.04);
+    --li-border-default: rgba(255, 255, 255, 0.08);
+    --li-border-active: rgba(255, 255, 255, 0.16);
 
     /* Functional */
     --li-info: #02b8cc;
@@ -87,8 +87,10 @@
 
     /* --- Effects --- */
     --li-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-    --li-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-    --li-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-    --li-glass-bg: rgba(255, 255, 255, 0.03);
-    --li-glass-border: rgba(255, 255, 255, 0.08);
+    --li-shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.5), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+    --li-shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.6), 0 8px 12px -4px rgba(0, 0, 0, 0.4);
+    --li-shadow-inner: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+    --li-shadow-glow: 0 0 16px rgba(255, 79, 25, 0.35);
+    --li-glass-bg: rgba(255, 255, 255, 0.02);
+    --li-glass-border: rgba(255, 255, 255, 0.06);
 }

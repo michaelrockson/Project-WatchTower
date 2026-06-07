@@ -24,6 +24,7 @@ body {
     background-color: var(--li-bg-app);
     color: var(--li-text-primary);
     font-family: var(--li-font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     font-size: var(--li-fs-base);
     line-height: var(--li-lh-base);
     font-weight: var(--li-fw-normal);
@@ -37,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--li-text-primary);
     font-weight: var(--li-fw-semibold);
     line-height: var(--li-lh-tight);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .li-h1 {
