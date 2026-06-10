@@ -1,0 +1,65 @@
+/* --- Pricing --- */
+
+.li-price-card {
+  background: var(--li-bg-card);
+  border: 1px solid var(--li-border-default);
+  border-radius: var(--li-radius-lg);
+  padding: var(--li-space-8);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.li-price-card-featured {
+  border-color: var(--li-brand);
+  box-shadow: 0 0 20px rgba(94, 106, 210, 0.1);
+  position: relative;
+}
+
+.li-price-tier {
+  font-size: var(--li-fs-sm);
+  font-weight: var(--li-fw-semibold);
+  color: var(--li-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--li-space-4);
+}
+
+.li-price-amount {
+  font-size: var(--li-fs-4xl);
+  font-weight: var(--li-fw-bold);
+  color: var(--li-text-primary);
+  margin-bottom: var(--li-space-2);
+}
+
+.li-price-amount span {
+  font-size: var(--li-fs-xl);
+  font-weight: var(--li-fw-normal);
+  color: var(--li-text-muted);
+}
+
+.li-price-desc {
+  font-size: var(--li-fs-sm);
+  color: var(--li-text-secondary);
+  margin-bottom: var(--li-space-6);
+}
+
+.li-price-list {
+  list-style: none;
+  margin-bottom: var(--li-space-8);
+  flex-grow: 1;
+}
+
+.li-price-item {
+  font-size: var(--li-fs-sm);
+  color: var(--li-text-secondary);
+  margin-bottom: var(--li-space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--li-space-2);
+}
+
+.li-price-item::before {
+  content: "✓";
+  color: var(--li-success);
+}

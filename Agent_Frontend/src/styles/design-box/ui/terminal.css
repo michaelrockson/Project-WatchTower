@@ -1,0 +1,105 @@
+/* --- Terminal --- */
+.li-terminal {
+  background: #08090a;
+  border-radius: var(--li-radius-md);
+  border: 1px solid var(--li-border-default);
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.li-terminal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--li-brand), transparent);
+}
+
+.li-terminal-bar {
+  background: #0f1012;
+  padding: var(--li-space-sm) var(--li-space-md);
+  border-bottom: 1px solid var(--li-border-dim);
+  display: flex;
+  align-items: center;
+  gap: var(--li-space-xs);
+}
+
+.li-t-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.li-t-dot-red {
+  background: #ff5f56;
+}
+
+.li-t-dot-yellow {
+  background: #ffbd2e;
+}
+
+.li-t-dot-green {
+  background: #27c93f;
+}
+
+.li-terminal-title {
+  font-size: 11px;
+  color: var(--li-text-muted);
+  font-family: var(--li-font-mono);
+  margin-left: var(--li-space-sm);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.li-terminal-body {
+  padding: var(--li-space-lg);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--li-text-secondary);
+  font-family: var(--li-font-mono);
+}
+
+.li-t-line {
+  display: flex;
+  gap: var(--li-space-sm);
+  margin-bottom: 4px;
+}
+
+.li-t-prompt {
+  color: var(--li-brand);
+  flex-shrink: 0;
+}
+
+.li-t-cmd {
+  color: var(--li-text-primary);
+}
+
+.li-t-out {
+  color: var(--li-text-muted);
+  padding-left: 18px;
+  display: block;
+  margin-bottom: var(--li-space-md);
+}
+
+.li-t-str {
+  color: var(--li-success);
+}
+
+.li-t-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--li-brand);
+  animation: li-blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes li-blink {
+  50% {
+    opacity: 0;
+  }
+}

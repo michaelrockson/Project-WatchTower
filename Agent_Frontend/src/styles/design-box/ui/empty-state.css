@@ -1,0 +1,39 @@
+/* --- Empty State --- */
+.li-empty-state-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px dashed var(--li-border-default);
+  box-shadow: var(--li-shadow-inner), var(--li-shadow-sm);
+  border-radius: var(--li-radius-lg);
+  padding: var(--li-space-8);
+  overflow: hidden;
+}
+
+.li-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--li-space-xl) var(--li-space-lg);
+  gap: var(--li-space-sm);
+  text-align: center;
+}
+
+.li-empty-state-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--li-text-muted);
+  opacity: 0.5;
+  margin-bottom: var(--li-space-xs);
+}
+
+.li-empty-state-title {
+  font-size: var(--li-fs-base);
+  font-weight: var(--li-fw-semibold);
+  color: var(--li-text-secondary);
+}
+
+.li-empty-state-sub {
+  font-size: var(--li-fs-sm);
+  color: var(--li-text-muted);
+}

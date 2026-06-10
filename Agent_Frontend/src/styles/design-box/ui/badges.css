@@ -1,0 +1,92 @@
+/* --- Badges --- */
+
+.li-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  font-size: var(--li-fs-xs);
+  font-weight: var(--li-fw-medium);
+  border-radius: var(--li-radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--li-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.li-badge-brand {
+  background: rgba(94, 106, 210, 0.1);
+  border-color: rgba(94, 106, 210, 0.2);
+  color: var(--li-brand-light);
+}
+
+/* --- Tags / Chips --- */
+
+.li-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  font-size: var(--li-fs-xs);
+  font-weight: var(--li-fw-medium);
+  border-radius: var(--li-radius-md);
+  background: var(--li-bg-surface-soft);
+  border: 1px solid var(--li-border-default);
+  color: var(--li-text-secondary);
+  transition: all 0.2s ease;
+}
+
+.li-tag:hover {
+  border-color: var(--li-border-active);
+  color: var(--li-text-primary);
+}
+
+.li-tag-active {
+  background: rgba(94, 106, 210, 0.1);
+  border-color: var(--li-brand);
+  color: var(--li-text-primary);
+}
+
+
+/* --- Badge Variants --- */
+
+.li-badge-error {
+  background: rgba(235, 87, 87, 0.1);
+  border-color: rgba(235, 87, 87, 0.2);
+  color: var(--li-error);
+}
+
+.li-badge-warning {
+  background: rgba(242, 201, 76, 0.1);
+  border-color: rgba(242, 201, 76, 0.2);
+  color: var(--li-warning);
+}
+
+.li-badge-success {
+  background: rgba(39, 166, 68, 0.1);
+  border-color: rgba(39, 166, 68, 0.2);
+  color: var(--li-success);
+}
+
+
+/* --- Subreddit Badge --- */
+
+.li-badge-subreddit {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  font-size: var(--li-fs-xs);
+  font-weight: var(--li-fw-semibold);
+  border-radius: var(--li-radius-full);
+  background: rgba(255, 69, 0, 0.08);
+  border: 1px solid rgba(255, 69, 0, 0.18);
+  color: var(--li-brand-light);
+  white-space: nowrap;
+  font-family: var(--li-font-mono);
+  letter-spacing: 0.01em;
+}
+
+.li-badge-subreddit::before {
+  color: var(--li-text-muted);
+  font-weight: var(--li-fw-normal);
+}

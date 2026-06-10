@@ -1,0 +1,68 @@
+/* --- Buttons --- */
+
+.li-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--li-space-4);
+  height: 36px;
+  font-size: var(--li-fs-sm);
+  font-weight: var(--li-fw-medium);
+  border-radius: var(--li-radius-md);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  gap: var(--li-space-2);
+  white-space: nowrap;
+}
+
+.li-btn-primary {
+  background: var(--li-brand);
+  color: white;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.li-btn-primary:hover {
+  background: var(--li-brand-light);
+  transform: translateY(-2px);
+  box-shadow:
+    var(--li-shadow-glow),
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.li-btn-secondary {
+  background: var(--li-bg-surface-soft);
+  color: var(--li-text-primary);
+  border-color: var(--li-border-default);
+}
+
+.li-btn-secondary:hover {
+  background: var(--li-bg-card);
+  border-color: var(--li-border-active);
+}
+
+.li-btn-ghost {
+  background: transparent;
+  color: var(--li-text-secondary);
+}
+
+.li-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--li-text-primary);
+}
+
+.li-btn-xs {
+  height: 24px;
+  padding: 0 var(--li-space-2);
+  font-size: var(--li-fs-xs);
+}
+
+.li-btn-lg {
+  height: 44px;
+  padding: 0 var(--li-space-6);
+  font-size: var(--li-fs-base);
+}

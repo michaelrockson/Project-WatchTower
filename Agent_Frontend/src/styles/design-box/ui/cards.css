@@ -1,0 +1,96 @@
+/* --- Cards --- */
+
+.li-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--li-border-default);
+  box-shadow: var(--li-shadow-inner), var(--li-shadow-sm);
+  border-radius: var(--li-radius-lg);
+  padding: var(--li-space-8);
+  overflow: hidden;
+  background-color: var(--li-bg-surface);
+}
+
+.li-card-header {
+  margin-bottom: var(--li-space-8);
+}
+
+.li-card-title {
+  font-size: var(--li-fs-lg);
+  font-weight: var(--li-fw-semibold);
+  color: var(--li-text-primary);
+}
+
+
+/* --- Card Accent Top-Border Variants --- */
+
+.li-card-accent {
+  border-top: 2px solid transparent;
+}
+
+.li-card-accent-info {
+  border-top: 2px solid var(--li-info);
+  box-shadow: 0 -1px 12px rgba(2, 184, 204, 0.08);
+}
+
+.li-card-accent-success {
+  border-top: 2px solid var(--li-success);
+  box-shadow: 0 -1px 12px rgba(39, 166, 68, 0.08);
+}
+
+.li-card-accent-warning {
+  border-top: 2px solid var(--li-warning);
+  box-shadow: 0 -1px 12px rgba(242, 201, 76, 0.08);
+}
+
+.li-card-accent-error {
+  border-top: 2px solid var(--li-error);
+  box-shadow: 0 -1px 12px rgba(235, 87, 87, 0.08);
+}
+
+.li-card-accent-brand {
+  border-top: 2px solid var(--li-brand);
+  box-shadow: 0 -1px 12px rgba(255, 69, 0, 0.08);
+}
+
+/* --- Card Icon Box --- */
+
+.li-card-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--li-radius-md);
+  flex-shrink: 0;
+}
+
+.li-card-icon-box-info {
+  background: rgba(2, 184, 204, 0.1);
+  border: 1px solid rgba(2, 184, 204, 0.2);
+  color: var(--li-info);
+}
+
+.li-card-icon-box-success {
+  background: rgba(39, 166, 68, 0.1);
+  border: 1px solid rgba(39, 166, 68, 0.2);
+  color: var(--li-success);
+}
+
+.li-card-icon-box-warning {
+  background: rgba(242, 201, 76, 0.1);
+  border: 1px solid rgba(242, 201, 76, 0.2);
+  color: var(--li-warning);
+}
+
+.li-card-icon-box-error {
+  background: rgba(235, 87, 87, 0.1);
+  border: 1px solid rgba(235, 87, 87, 0.2);
+  color: var(--li-error);
+}
+
+.li-card-icon-box-brand {
+  background: rgba(255, 69, 0, 0.1);
+  border: 1px solid rgba(255, 69, 0, 0.2);
+  color: var(--li-brand-light);
+}

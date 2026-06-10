@@ -1,0 +1,140 @@
+/**
+ * Components
+ */
+
+.li-navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(8, 9, 10, 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+
+/* --- Header Bar Sub-components --- */
+
+.li-header-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.li-header-title {
+  font-size: var(--li-fs-base);
+  font-weight: var(--li-fw-semibold);
+  color: var(--li-text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.li-header-timestamp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--li-fs-xs);
+  color: var(--li-text-muted);
+  font-family: var(--li-font-mono);
+  white-space: nowrap;
+  margin-right: var(--li-space-md);
+}
+
+.li-header-live-dot {
+  color: var(--li-success);
+  animation: li-pulse 2s ease-in-out infinite;
+}
+
+@keyframes li-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.li-header-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: var(--li-space-sm);
+}
+
+.li-header-search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--li-text-muted);
+  pointer-events: none;
+}
+
+.li-header-search {
+  padding-left: 32px !important;
+  width: 200px;
+  transition:
+    width 0.3s ease,
+    border-color 0.2s ease;
+}
+
+.li-header-search:focus {
+  width: 260px;
+}
+
+.li-header-bell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--li-radius-md);
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--li-text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.li-header-bell:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--li-border-default);
+  color: var(--li-text-primary);
+}
+
+.li-header-bell-badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--li-radius-full);
+  background: var(--li-brand);
+  color: white;
+  font-size: 9px;
+  font-weight: var(--li-fw-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--li-bg-app);
+}
+
+.li-benefit-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--li-space-sm);
+}
+
+.li-benefit-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--li-brand);
+  margin-bottom: var(--li-space-sm);
+}
+
+.li-phase-number {
+  font-size: var(--li-fs-xs);
+  font-weight: var(--li-fw-bold);
+  color: var(--li-brand);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--li-space-xs);
+}

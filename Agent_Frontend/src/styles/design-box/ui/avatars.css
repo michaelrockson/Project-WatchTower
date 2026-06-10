@@ -1,0 +1,39 @@
+/* --- Avatars --- */
+
+.li-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--li-radius-full);
+  background: var(--li-bg-surface-soft);
+  border: 1px solid var(--li-border-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--li-fs-sm);
+  font-weight: var(--li-fw-semibold);
+  color: var(--li-text-primary);
+  flex-shrink: 0;
+}
+
+.li-avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--li-fs-xs);
+}
+
+.li-avatar-lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--li-fs-base);
+}
+
+.li-avatar-xl {
+  width: 72px;
+  height: 72px;
+  font-size: var(--li-fs-xl);
+}
+
+.li-avatar-brand {
+  background: var(--li-brand);
+  border-color: var(--li-brand-light);
+}
